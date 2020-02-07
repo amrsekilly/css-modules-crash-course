@@ -1,0 +1,29 @@
+@import "../../configs/colors";
+
+.grab-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+
+    &__danger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+    }
+
+    &__debug {
+        display: none;
+        position: absolute;
+        width: 300px;
+        top: -100px;
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

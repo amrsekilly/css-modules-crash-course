@@ -1,0 +1,80 @@
+@import "./configs/colors";
+
+
+// General modules
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 1rem 100px 1rem;
+
+  @media (min-width: 900px) {
+    max-width: 650px;
+    padding: 0 1rem 90px 1rem;
+  }
+}
+
+// Full-screen wrapper
+.app {
+  position: relative;
+  background: #F2E9DE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 2rem);
+  margin: 1rem;
+  overflow: hidden;
+
+  // Modifiers
+  &--debug {
+    .grab-zone {
+      background: $grabZoneBG;
+    }
+
+    .grab-zone__debug {
+      display: block;
+    }
+
+    .grab-zone__danger {
+      background: $grabZoneDangerBG;
+    }
+
+    .grabber__arm-wrapper {
+      background: $grabberArmWrapperBG;
+    }
+  }
+}
+
+.grab-zone-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateX(30%) translateY(50%);
+}
+
+.trap-button {
+  position: absolute;
+  bottom: 80px;
+  right: 70px;
+  min-width: 125px;
+  background: $trapButtonbackground;
+  color: $white;
+  border-radius: 5px;
+  padding: 0.4rem 0.5rem;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.debug-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: transparent;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}

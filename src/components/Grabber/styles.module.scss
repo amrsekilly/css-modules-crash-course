@@ -1,0 +1,171 @@
+@import "../../configs/colors";
+
+
+.grabber {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    &__arm-wrapper {
+        position: absolute;
+        top: -80px;
+        width: 24px;
+        height: 260px;
+    }
+
+    &__arm {
+        position: relative;
+        width: 24px;
+        height: 200px;
+        background: $bodyBackground;
+        border-radius: 20px;
+        overflow: visible;
+        transform: translateY(100%);
+        transition: transform 0.2s ease;
+    }
+
+    &__hand {
+        display: block;
+        position: absolute;
+        top: -12px;
+        transform: scale(1.4) rotate(-10deg) translateY(100%);
+        transform-origin: bottom center;
+        transition: transform 0.3s ease;
+    }
+
+    &__face {
+        position: absolute;
+        width: 75px;
+        height: 84px;
+        right: 5%;
+        transition: transform 0.3s ease;
+    }
+
+
+    &__body {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 110px;
+        height: 95px;
+        border-radius: 50%;
+        background: $bodyBackground;
+        transition: transform 0.3s ease;
+    }
+
+
+    // Modifiers
+    &--waiting {
+        .grabber__hand {
+            transform: scale(1.4) rotate(-10deg);
+        }
+
+        .grabber__arm {
+            transform: translateY(80%);
+        }
+
+        .grabber__face {
+            transform: translateY(60%);
+        }
+    }
+
+    // Modifiers
+    &--stalking {
+        .grabber__hand {
+            transform: scale(1.4) rotate(-10deg);
+        }
+
+        .grabber__arm {
+            transform: translateY(70%);
+        }
+
+        .grabber__face {
+            transform: translateY(10%);
+        }
+    }
+
+    &--grabbing {
+        .grabber__face {
+            transform: translateY(-40%) rotate(10deg);
+        }
+
+        .grabber__arm {
+            transform: translateY(0%);
+        }
+
+        .grabber__body {
+            transform: translateY(-20%);
+        }
+
+        .grabber__hand {
+            transform: scale(1.7) rotate(10deg);
+        }
+    }
+
+    &--grabbed {
+        .grabber__arm {
+            transition: transform 1s ease;
+        }
+
+        .grabber__hand {
+            transition: transform 2.5s ease;
+        }
+
+        .grabber__face {
+            transform: translateY(70%);
+            transition: transform 1s ease;
+        }
+
+        .grabber__body {
+            transform: translateY(50%);
+            transition: transform 1s ease;
+        }
+    }
+
+    &--extended {
+        .grabber__arm {
+            transform: translateY(-20%);
+        }
+
+        .grabber__face {
+            transform: translateY(-60%) rotate(15deg);
+        }
+
+        .grabber__body {
+            transform: translateY(-40%);
+        }
+    }
+
+    &--shaka {
+        .grabber__arm {
+            transform: translateY(50%);
+        }
+
+        .grabber__hand {
+            transform: scale(2.5) translateY(10%);
+            animation: shaka 0.5s infinite alternate forwards;
+            transform-origin: 55% 60%;
+        }
+
+        .grabber__face {
+            transform: translateY(70%);
+            transition: transform 1s ease;
+        }
+
+        .grabber__body {
+            transform: translateY(50%);
+            transition: transform 1s ease;
+        }
+    }
+}
+
+
+@keyframes shaka {
+    0% {
+        transform: scale(2.5) translateY(0%) rotate(-20deg);
+    }
+
+    100% {
+        transform: scale(2.5) translateY(0%) rotate(20deg);
+    }
+}
