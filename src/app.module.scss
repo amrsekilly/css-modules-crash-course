@@ -52,6 +52,7 @@
 }
 
 .trap-button {
+  composes: button from './index.scss';
   position: absolute;
   bottom: 80px;
   right: 70px;
@@ -67,6 +68,7 @@
 }
 
 .debug-button {
+  composes: button from './index.scss';
   position: fixed;
   top: 0;
   right: 0;

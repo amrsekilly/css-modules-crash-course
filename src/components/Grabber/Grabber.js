@@ -20,8 +20,9 @@ export const Grabber = ({ state, gameOver, extended, onCursorGrabbed }) => {
   // Ensure value is within acceptable range (-75 to 75)
   const rotation = Math.min(Math.max(parseInt(angle), -79), 79);
 
-  const grabberClass = `grabber grabber--${state} ${extended &&
-    "grabber--extended"}`;
+  const grabberClass = `${styles.grabber} ${
+    styles[`grabber--${state}`]
+  } ${extended && styles["grabber--extended"]}`;
   const wrapperStyle = { transform: `rotate(${rotation}deg)` };
 
   let handImageSrc = ASSETS[state];
